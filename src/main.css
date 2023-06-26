@@ -2,6 +2,9 @@
   --header-bgc: rgb(231, 231, 193);
   --sidebar-bgc: rgb(167, 195, 248);
   --main-bgc: rgb(250, 245, 245);
+  --header-btn-bgc: rgb(142, 142, 217);
+  --header-btn-hover-bgc: rgb(88, 88, 195);
+  --profile-pic-bgc: rgb(153, 223, 244);
 }
 
 body {
@@ -19,7 +22,7 @@ body {
   height: 100px;
   display: flex;
   justify-content: space-between;
-  gap: 2.5rem;
+  gap: 10rem;
 }
 
 .logo-container {
@@ -42,6 +45,43 @@ body {
 .btns-container {
   border: 1px solid black;
   flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5rem;
+  padding-right: 2%;
+  padding-left: 10rem;
+}
+
+.header-btn {
+  flex: 1;
+  background-color: var(--header-btn-bgc);
+  text-align: center;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 2rem;
+}
+
+.header-btn:hover {
+  background-color: var(--header-btn-hover-bgc);
+  cursor: pointer;
+}
+
+.profile-pic-container {
+  border: 3px solid black;
+  flex: 1;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--profile-pic-bgc);
+}
+
+.profile-img {
+  height: 80%;
 }
 
 /* BOTTOM SECTION */

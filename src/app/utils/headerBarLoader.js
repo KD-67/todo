@@ -1,4 +1,5 @@
 import logo from "./todo-logo.png";
+import userImg from "./rat.png";
 
 const loadHeaderBar = () => {
   const headerBar = document.querySelector(".header-bar");
@@ -25,6 +26,30 @@ const loadHeaderBar = () => {
   const btnsContainer = document.createElement("div");
   btnsContainer.classList.add("btns-container");
   headerBar.appendChild(btnsContainer);
+
+  // SIGN UP BTN
+  const signupBtn = document.createElement("div");
+  signupBtn.classList.add("header-btn");
+  btnsContainer.appendChild(signupBtn);
+  signupBtn.innerText = "SIGN UP";
+
+  // LOG IN BTN
+  const loginBtn = document.createElement("div");
+  loginBtn.classList.add("header-btn");
+  btnsContainer.appendChild(loginBtn);
+  loginBtn.innerText = "LOG IN";
+
+  // USER PROFILE PIC CONTAINER
+  const profilePicContainer = document.createElement("div");
+  profilePicContainer.classList.add("profile-pic-container");
+  btnsContainer.appendChild(profilePicContainer);
+
+  // USER PROFILE PIC IMG
+  const profileImg = document.createElement("img");
+  profileImg.src = userImg;
+  profileImg.alt = "profile picture";
+  profileImg.classList.add("profile-img");
+  profilePicContainer.appendChild(profileImg);
 };
 
 export { loadHeaderBar };
