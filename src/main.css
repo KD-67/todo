@@ -33,13 +33,13 @@ body {
   gap: 1rem;
 }
 
+.logo-container:hover {
+  cursor: pointer;
+}
+
 .logo-img {
   height: 90%;
   flex: 1;
-}
-
-.logo-img:hover {
-  cursor: pointer;
 }
 
 .logo-text {
@@ -82,6 +82,10 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--profile-pic-bgc);
+}
+
+.profile-pic-container:hover {
+  cursor: pointer;
 }
 
 .profile-img {
