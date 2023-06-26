@@ -38,6 +38,10 @@ body {
   flex: 1;
 }
 
+.logo-img:hover {
+  cursor: pointer;
+}
+
 .logo-text {
   flex: 2;
 }
