@@ -15,12 +15,6 @@ const loadAddNewTaskBtn = () => {
   addNewTaskIcon.classList.add("add-new-task-icon");
   addNewTaskIcon.src = addIcon;
   addNewTaskIcon.alt = "Add new To Do item";
-
-  // Title
-  const mainTitle = document.createElement("h2");
-  mainTitle.classList.add("main-title");
-  mainContent.appendChild(mainTitle);
-  mainTitle.innerText = "TODAY 5 July 2023";
 };
 
 export { loadAddNewTaskBtn };
