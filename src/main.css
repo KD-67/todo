@@ -114,6 +114,10 @@ body {
   flex: 3.5;
 }
 
+.task-list {
+  border: 2px solid black;
+}
+
 .add-new-task-container {
   position: absolute;
   top: 110px;
@@ -128,6 +132,6 @@ body {
   height: 7rem;
 }
 
-.task-container {
+.new-task-container {
   border: 1px solid black;
 }

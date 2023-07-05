@@ -1,5 +1,5 @@
 const loadNewTaskForm = () => {
-  const newTaskContainer = document.querySelector(".task-container");
+  const newTaskContainer = document.querySelector(".new-task-container");
 
   // "add new task" form
   const newTaskForm = document.createElement("form");
@@ -113,6 +113,9 @@ const loadNewTaskForm = () => {
   submit.innerText = "Submit";
 
   // Submit button functionality
+  submit.addEventListener("click", () => {
+    // do stuff
+  });
 
   // Cancel button
   const cancel = document.createElement("button");
