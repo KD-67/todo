@@ -25,7 +25,6 @@ body {
 }
 
 .logo-container {
-  border: 1px solid black;
   flex: 1;
   display: flex;
   justify-content: space-around;
@@ -47,7 +46,6 @@ body {
 }
 
 .btns-container {
-  border: 1px solid black;
   flex: 2;
   display: flex;
   align-items: center;
@@ -114,10 +112,6 @@ body {
   flex: 3.5;
 }
 
-.task-list-container {
-  border: 2px solid black;
-}
-
 .add-new-task-container {
   position: absolute;
   top: 110px;
@@ -130,8 +124,4 @@ body {
 
 .add-new-task-icon {
   height: 7rem;
-}
-
-.new-task-container {
-  border: 1px solid black;
 }

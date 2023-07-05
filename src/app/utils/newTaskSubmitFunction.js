@@ -1,3 +1,5 @@
+import { removeCompletedTask } from "./removeCompletedTask";
+
 const newTaskSubmit = (name, description, due, priority) => {
   const taskListContainer = document.querySelector(".task-list-container");
 
@@ -30,12 +32,24 @@ const newTaskSubmit = (name, description, due, priority) => {
   // Due Date
   const taskDue = document.createElement("p");
   card.appendChild(taskDue);
-  taskDue.innerText = due;
+  taskDue.innerText = "Due date: " + due;
 
-  //Priority
+  // Priority
   const taskPriority = document.createElement("p");
   card.appendChild(taskPriority);
-  taskPriority.innerText = priority;
+  taskPriority.innerText = "Priority: " + priority;
+
+  // Completed Button
+  const completedBtn = document.createElement("button");
+  card.appendChild(completedBtn);
+  completedBtn.classList.add("completed-btn");
+  completedBtn.innerText = "Done";
+
+  // Completed button functionality
+  completedBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    taskList.removeChild(task);
+  });
 };
 
 export { newTaskSubmit };
