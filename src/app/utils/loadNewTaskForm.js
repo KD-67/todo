@@ -1,9 +1,9 @@
 const loadNewTaskForm = () => {
-  const taskContainer = document.querySelector(".task-container");
+  const newTaskContainer = document.querySelector(".task-container");
 
   // "add new task" form
   const newTaskForm = document.createElement("form");
-  taskContainer.appendChild(newTaskForm);
+  newTaskContainer.appendChild(newTaskForm);
   newTaskForm.classList.add("new-task-list");
 
   // Form elements:
@@ -11,7 +11,7 @@ const loadNewTaskForm = () => {
   // Title container
   const titleContainer = document.createElement("div");
   titleContainer.classList.add("input-container");
-  taskContainer.appendChild(titleContainer);
+  newTaskForm.appendChild(titleContainer);
 
   // Title label
   const titleLabel = document.createElement("label");
@@ -32,7 +32,7 @@ const loadNewTaskForm = () => {
   // Description container
   const descriptionContainer = document.createElement("div");
   descriptionContainer.classList.add("input-container");
-  taskContainer.appendChild(descriptionContainer);
+  newTaskForm.appendChild(descriptionContainer);
 
   // Description label
   const descriptionLabel = document.createElement("label");
@@ -52,7 +52,7 @@ const loadNewTaskForm = () => {
   // Due date container
   const dueContainer = document.createElement("div");
   titleContainer.classList.add("due-container");
-  taskContainer.appendChild(dueContainer);
+  newTaskForm.appendChild(dueContainer);
 
   // Due date label
   const dueLabel = document.createElement("label");
@@ -72,7 +72,7 @@ const loadNewTaskForm = () => {
   // Priority container
   const priorityContainer = document.createElement("div");
   priorityContainer.classList.add("priority-container");
-  taskContainer.appendChild(priorityContainer);
+  newTaskForm.appendChild(priorityContainer);
 
   // Priority label
   const priorityLabel = document.createElement("label");
@@ -107,17 +107,24 @@ const loadNewTaskForm = () => {
 
   // Sumbit button
   const submit = document.createElement("button");
-  taskContainer.appendChild(submit);
+  newTaskForm.appendChild(submit);
   submit.classList.add("new-task-form-submit-btn");
   submit.setAttribute("type", "submit");
   submit.innerText = "Submit";
 
+  // Submit button functionality
+
   // Cancel button
   const cancel = document.createElement("button");
-  taskContainer.appendChild(cancel);
+  newTaskForm.appendChild(cancel);
   cancel.classList.add("new-task-form-cancel-btn");
   cancel.setAttribute("type", "button");
   cancel.innerText = "Cancel";
+
+  // Cancel button functionality
+  cancel.addEventListener("click", () => {
+    newTaskContainer.removeChild(newTaskForm);
+  });
 };
 
 export { loadNewTaskForm };
