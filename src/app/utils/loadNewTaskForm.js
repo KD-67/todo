@@ -93,20 +93,20 @@ const loadNewTaskForm = () => {
   priority.setAttribute("name", "priority-input");
 
   // Priority dropdown menu options
-  const high = document.createElement("option");
-  priority.appendChild(high);
-  high.setAttribute("value", "high");
-  high.innerText = "High";
+  const low = document.createElement("option");
+  priority.appendChild(low);
+  low.setAttribute("value", "low");
+  low.innerText = "Low";
 
   const medium = document.createElement("option");
   priority.appendChild(medium);
   medium.setAttribute("value", "medium");
   medium.innerText = "Medium";
 
-  const low = document.createElement("option");
-  priority.appendChild(low);
-  low.setAttribute("value", "low");
-  low.innerText = "Low";
+  const high = document.createElement("option");
+  priority.appendChild(high);
+  high.setAttribute("value", "high");
+  high.innerText = "High";
 
   // Sumbit button
   const submit = document.createElement("button");
