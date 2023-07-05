@@ -1,8 +1,8 @@
 import { newTaskSubmit } from "./newTaskSubmitFunction";
+import { throwNoNameError } from "./throwNoNameError";
 
 const loadNewTaskForm = () => {
   const newTaskContainer = document.querySelector(".new-task-container");
-  const taskListContainer = document.querySelector(".task-list-container");
 
   // "add new task" form
   const newTaskForm = document.createElement("form");
@@ -31,6 +31,7 @@ const loadNewTaskForm = () => {
   name.setAttribute("type", "text");
   name.setAttribute("name", "name-input");
   name.setAttribute("placeholder", "Task name");
+  name.required = true;
 
   // Description container
   const descriptionContainer = document.createElement("div");
@@ -118,8 +119,16 @@ const loadNewTaskForm = () => {
   // Submit button functionality
   submit.addEventListener("click", (e) => {
     e.preventDefault();
-    newTaskSubmit(name.value, description.value, due.value, priority.value);
-    newTaskContainer.removeChild(newTaskForm);
+    if (name.value) {
+      newTaskSubmit(name.value, description.value, due.value, priority.value);
+      while (newTaskContainer.firstChild) {
+        newTaskContainer.removeChild(newTaskContainer.firstChild);
+      }
+    } else if (!name.value && newTaskContainer.childNodes.length > 1) {
+      return;
+    } else {
+      throwNoNameError();
+    }
   });
 
   // Cancel button
@@ -132,7 +141,9 @@ const loadNewTaskForm = () => {
   // Cancel button functionality
   cancel.addEventListener("click", (e) => {
     e.preventDefault();
-    newTaskContainer.removeChild(newTaskForm);
+    while (newTaskContainer.firstChild) {
+      newTaskContainer.removeChild(newTaskContainer.firstChild);
+    }
   });
 };
 
