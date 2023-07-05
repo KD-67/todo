@@ -1,5 +1,3 @@
-import { removeCompletedTask } from "./removeCompletedTask";
-
 const newTaskSubmit = (name, description, due, priority) => {
   const taskListContainer = document.querySelector(".task-list-container");
 
