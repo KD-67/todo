@@ -11,26 +11,26 @@ const loadNewTaskForm = () => {
 
   // Form elements:
 
-  // Title container
-  const titleContainer = document.createElement("div");
-  titleContainer.classList.add("input-container");
-  newTaskForm.appendChild(titleContainer);
+  // Name container
+  const nameContainer = document.createElement("div");
+  nameContainer.classList.add("input-container");
+  newTaskForm.appendChild(nameContainer);
 
-  // Title label
-  const titleLabel = document.createElement("label");
-  titleContainer.appendChild(titleLabel);
-  titleLabel.classList.add("new-task-input-label");
-  titleLabel.htmlFor = "title-input";
-  titleLabel.innerText = "Task name:";
+  // Name label
+  const nameLabel = document.createElement("label");
+  nameContainer.appendChild(nameLabel);
+  nameLabel.classList.add("new-task-input-label");
+  nameLabel.htmlFor = "name-input";
+  nameLabel.innerText = "Task name:";
 
-  // Title input
-  const title = document.createElement("input");
-  titleContainer.appendChild(title);
-  title.classList.add("new-task");
-  title.setAttribute("id", "title-input");
-  title.setAttribute("type", "text");
-  title.setAttribute("name", "title-input");
-  title.setAttribute("placeholder", "Task name");
+  // Name input
+  const name = document.createElement("input");
+  nameContainer.appendChild(name);
+  name.classList.add("new-task");
+  name.setAttribute("id", "name-input");
+  name.setAttribute("type", "text");
+  name.setAttribute("name", "name-input");
+  name.setAttribute("placeholder", "Task name");
 
   // Description container
   const descriptionContainer = document.createElement("div");
@@ -54,7 +54,7 @@ const loadNewTaskForm = () => {
 
   // Due date container
   const dueContainer = document.createElement("div");
-  titleContainer.classList.add("due-container");
+  dueContainer.classList.add("due-container");
   newTaskForm.appendChild(dueContainer);
 
   // Due date label
@@ -90,7 +90,7 @@ const loadNewTaskForm = () => {
   priority.classList.add("new-task");
   priority.setAttribute("id", "priority-input");
   priority.setAttribute("type", "date");
-  title.setAttribute("name", "priority-input");
+  priority.setAttribute("name", "priority-input");
 
   // Priority dropdown menu options
   const high = document.createElement("option");
@@ -118,7 +118,7 @@ const loadNewTaskForm = () => {
   // Submit button functionality
   submit.addEventListener("click", (e) => {
     e.preventDefault();
-    newTaskSubmit(title.value, description.value, due.value, priority.value);
+    newTaskSubmit(name.value, description.value, due.value, priority.value);
     newTaskContainer.removeChild(newTaskForm);
   });
 
