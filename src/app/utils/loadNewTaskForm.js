@@ -118,7 +118,7 @@ const loadNewTaskForm = () => {
   // Submit button functionality
   submit.addEventListener("click", (e) => {
     e.preventDefault();
-    newTaskSubmit();
+    newTaskSubmit(title.value, description.value, due.value, priority.value);
     newTaskContainer.removeChild(newTaskForm);
   });
 
