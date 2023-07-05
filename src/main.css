@@ -114,7 +114,7 @@ body {
   flex: 3.5;
 }
 
-.task-list {
+.task-list-container {
   border: 2px solid black;
 }
 

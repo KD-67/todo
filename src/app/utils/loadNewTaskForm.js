@@ -1,5 +1,8 @@
+import { newTaskSubmit } from "./newTaskSubmitFunction";
+
 const loadNewTaskForm = () => {
   const newTaskContainer = document.querySelector(".new-task-container");
+  const taskListContainer = document.querySelector(".task-list-container");
 
   // "add new task" form
   const newTaskForm = document.createElement("form");
@@ -113,8 +116,10 @@ const loadNewTaskForm = () => {
   submit.innerText = "Submit";
 
   // Submit button functionality
-  submit.addEventListener("click", () => {
-    // do stuff
+  submit.addEventListener("click", (e) => {
+    e.preventDefault();
+    newTaskSubmit();
+    newTaskContainer.removeChild(newTaskForm);
   });
 
   // Cancel button
@@ -125,7 +130,8 @@ const loadNewTaskForm = () => {
   cancel.innerText = "Cancel";
 
   // Cancel button functionality
-  cancel.addEventListener("click", () => {
+  cancel.addEventListener("click", (e) => {
+    e.preventDefault();
     newTaskContainer.removeChild(newTaskForm);
   });
 };

@@ -3,7 +3,7 @@ import { loadNewTaskForm } from "./loadNewTaskForm";
 
 const loadAddNewTaskBtn = () => {
   const mainContent = document.querySelector(".main-content");
-  const taskList = document.querySelector(".task-list");
+  const taskListContainer = document.querySelector(".task-list-container");
 
   // "Add new todo" button container
   const addNewTaskContainer = document.createElement("div");
@@ -19,7 +19,7 @@ const loadAddNewTaskBtn = () => {
 
   // Task list container
   const newTaskContainer = document.createElement("div");
-  mainContent.insertBefore(newTaskContainer, taskList);
+  mainContent.insertBefore(newTaskContainer, taskListContainer);
   newTaskContainer.classList.add("new-task-container");
 
   // Button functionality - bring up new task form
