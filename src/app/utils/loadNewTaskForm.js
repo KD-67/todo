@@ -90,7 +90,6 @@ const loadNewTaskForm = () => {
   priorityContainer.appendChild(priority);
   priority.classList.add("new-task");
   priority.setAttribute("id", "priority-input");
-  priority.setAttribute("type", "date");
   priority.setAttribute("name", "priority-input");
 
   // Priority dropdown menu options
@@ -109,6 +108,48 @@ const loadNewTaskForm = () => {
   high.setAttribute("value", "high");
   high.innerText = "High";
 
+  // Catergory container
+  const categoryContainer = document.createElement("div");
+  categoryContainer.classList.add("category-container");
+  newTaskForm.appendChild(categoryContainer);
+
+  // Category label
+  const categoryLabel = document.createElement("label");
+  categoryContainer.appendChild(categoryLabel);
+  categoryLabel.classList.add("new-task-input-label");
+  categoryLabel.htmlFor = "category-input";
+  categoryLabel.innerText = "Category:";
+
+  // Category input (datalist)
+  const category = document.createElement("input");
+  categoryContainer.appendChild(category);
+  category.classList.add("new-task");
+  category.setAttribute("id", "category-input");
+  category.setAttribute("type", "text");
+  category.setAttribute("list", "categories");
+  category.setAttribute("name", "category-input");
+  category.setAttribute("placeholder", "Select or add new");
+
+  // Category datalist
+  const categoryDatalist = document.createElement("datalist");
+  newTaskForm.appendChild(categoryDatalist);
+  categoryDatalist.setAttribute("id", "categories");
+
+  // Category options: home
+  const home = document.createElement("option");
+  categoryDatalist.appendChild(home);
+  home.setAttribute("value", "Home");
+
+  // Category options: work
+  const work = document.createElement("option");
+  categoryDatalist.appendChild(work);
+  work.setAttribute("value", "Work");
+
+  // Category options: health
+  const health = document.createElement("option");
+  categoryDatalist.appendChild(health);
+  health.setAttribute("value", "Health");
+
   // Sumbit button
   const submit = document.createElement("button");
   newTaskForm.appendChild(submit);
@@ -120,7 +161,13 @@ const loadNewTaskForm = () => {
   submit.addEventListener("click", (e) => {
     e.preventDefault();
     if (name.value) {
-      newTaskSubmit(name.value, description.value, due.value, priority.value);
+      newTaskSubmit(
+        name.value,
+        description.value,
+        due.value,
+        priority.value,
+        category.value
+      );
       while (newTaskContainer.firstChild) {
         newTaskContainer.removeChild(newTaskContainer.firstChild);
       }

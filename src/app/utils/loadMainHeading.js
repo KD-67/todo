@@ -6,13 +6,13 @@ const loadMainTitle = () => {
   const mainTitle = document.createElement("h2");
   mainContent.insertBefore(mainTitle, taskListContainer);
   mainTitle.classList.add("main-title");
-  mainTitle.innerText = "TODAY";
+  mainTitle.innerText = "Master List";
 
   // Current date:
   const mainDate = document.createElement("h4");
   mainContent.insertBefore(mainDate, taskListContainer);
   mainDate.classList.add("main-date");
-  mainDate.innerText = "5 July 2023";
+  mainDate.innerText = "(all dates)";
 };
 
 export { loadMainTitle };

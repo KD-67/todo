@@ -1,9 +1,9 @@
 import { taskFactory } from "./taskFactory";
 
-const newTaskSubmit = (name, description, due, priority) => {
+const newTaskSubmit = (name, description, due, priority, category) => {
   const taskListContainer = document.querySelector(".task-list-container");
 
-  const newTask = taskFactory(name, description, due, priority);
+  const newTask = taskFactory(name, description, due, priority, category);
 
   // Task list (ul)
   const taskList = document.createElement("ul");
@@ -31,15 +31,15 @@ const newTaskSubmit = (name, description, due, priority) => {
   card.appendChild(taskDescription);
   taskDescription.innerText = newTask.description;
 
-  // Due Date
-  const taskDue = document.createElement("p");
-  card.appendChild(taskDue);
-  taskDue.innerText = "Due date: " + newTask.due;
-
   // Priority
   const taskPriority = document.createElement("p");
   card.appendChild(taskPriority);
   taskPriority.innerText = "Priority: " + newTask.priority;
+
+  // Category
+  const taskCategory = document.createElement("p");
+  card.appendChild(taskCategory);
+  taskCategory.innerText = "Category: " + newTask.category;
 
   // Completed Button
   const completedBtn = document.createElement("button");
