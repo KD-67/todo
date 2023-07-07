@@ -1,4 +1,5 @@
-import { dateListPicker } from "../dateListPicker";
+import { dateListPicker } from "./dateListPicker";
+import { loadMasterList } from "./masterListBtn";
 
 const loadSideBar = () => {
   const sideBar = document.querySelector(".side-bar");
@@ -25,6 +26,12 @@ const loadSideBar = () => {
   masterListContainer.appendChild(masterList);
   masterList.classList.add("category-title");
   masterList.innerText = "Full list";
+
+  // Master list button functionality
+  masterList.addEventListener("click", (e) => {
+    e.preventDefault();
+    loadMasterList();
+  });
 
   // Title container
   const titleContainer = document.createElement("li");
