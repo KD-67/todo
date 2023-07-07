@@ -1,5 +1,5 @@
-import logo from "./todo-logo.png";
-import userImg from "./rat.png";
+import logo from "./media/todo-logo.png";
+import userImg from "./media/rat.png";
 
 const loadHeaderBar = () => {
   const headerBar = document.querySelector(".header-bar");

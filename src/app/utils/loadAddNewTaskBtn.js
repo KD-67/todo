@@ -1,4 +1,4 @@
-import addIcon from "./add.png";
+import addIcon from "./media/add.png";
 import { loadNewTaskForm } from "./loadNewTaskForm";
 
 const loadAddNewTaskBtn = () => {
