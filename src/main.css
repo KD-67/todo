@@ -113,6 +113,14 @@ ul {
   padding: 1rem;
 }
 
+.category:hover {
+  cursor: pointer;
+}
+
+.choose-date-btn:hover {
+  cursor: pointer;
+}
+
 /* MAIN SECTION */
 
 .main-content {
