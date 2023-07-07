@@ -39,7 +39,9 @@ const newTaskSubmit = (name, description, due, priority, category) => {
   // Category
   const taskCategory = document.createElement("p");
   card.appendChild(taskCategory);
-  taskCategory.innerText = "Category: " + newTask.category;
+  if (newTask.category) {
+    taskCategory.innerText = "Category: " + newTask.category;
+  }
 
   // Completed Button
   const completedBtn = document.createElement("button");

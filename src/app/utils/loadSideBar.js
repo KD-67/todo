@@ -1,3 +1,5 @@
+import { dateListPicker } from "../dateListPicker";
+
 const loadSideBar = () => {
   const sideBar = document.querySelector(".side-bar");
 
@@ -41,11 +43,23 @@ const loadSideBar = () => {
   today.classList.add("category");
   today.innerText = "Today";
 
+  // Today button functionality
+  today.addEventListener("click", (e) => {
+    e.preventDefault();
+    dateListPicker("today");
+  });
+
   // Tomorrow
   const tomorrow = document.createElement("li");
   categoryList.appendChild(tomorrow);
   tomorrow.classList.add("category");
   tomorrow.innerText = "Tomorrow";
+
+  // Tomorrow button functionality
+  tomorrow.addEventListener("click", (e) => {
+    e.preventDefault();
+    dateListPicker("tomorrow");
+  });
 
   // Choose Date Container
   const chooseDateContainer = document.createElement("li");
@@ -63,6 +77,16 @@ const loadSideBar = () => {
   chooseDateContainer.appendChild(chooseDateBtn);
   chooseDateBtn.classList.add("choose-date-btn");
   chooseDateBtn.innerText = "Go";
+
+  // Choose date button functionality
+  chooseDateBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (chooseDate.value) {
+      dateListPicker(chooseDate.value);
+    } else {
+      return;
+    }
+  });
 
   // Personal Categories:
   const personalList = document.createElement("ul");
