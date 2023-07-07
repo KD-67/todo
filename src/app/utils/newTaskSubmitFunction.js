@@ -1,5 +1,9 @@
+import { taskFactory } from "./taskFactory";
+
 const newTaskSubmit = (name, description, due, priority) => {
   const taskListContainer = document.querySelector(".task-list-container");
+
+  const newTask = taskFactory(name, description, due, priority);
 
   // Task list (ul)
   const taskList = document.createElement("ul");
@@ -20,22 +24,22 @@ const newTaskSubmit = (name, description, due, priority) => {
   // Name
   const taskName = document.createElement("h4");
   card.appendChild(taskName);
-  taskName.innerText = name;
+  taskName.innerText = newTask.name;
 
   // Description
   const taskDescription = document.createElement("p");
   card.appendChild(taskDescription);
-  taskDescription.innerText = description;
+  taskDescription.innerText = newTask.description;
 
   // Due Date
   const taskDue = document.createElement("p");
   card.appendChild(taskDue);
-  taskDue.innerText = "Due date: " + due;
+  taskDue.innerText = "Due date: " + newTask.due;
 
   // Priority
   const taskPriority = document.createElement("p");
   card.appendChild(taskPriority);
-  taskPriority.innerText = "Priority: " + priority;
+  taskPriority.innerText = "Priority: " + newTask.priority;
 
   // Completed Button
   const completedBtn = document.createElement("button");
@@ -48,6 +52,8 @@ const newTaskSubmit = (name, description, due, priority) => {
     e.preventDefault();
     taskList.removeChild(task);
   });
+
+  return newTask;
 };
 
 export { newTaskSubmit };
