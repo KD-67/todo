@@ -12,7 +12,19 @@ const loadSideBar = () => {
   categoryList.classList.add("category-list");
 
   // Catergories (li)
-  // Title
+
+  // Master list container
+  const masterListContainer = document.createElement("li");
+  categoryList.appendChild(masterListContainer);
+  masterListContainer.classList.add("category-title-container");
+
+  // Master list
+  const masterList = document.createElement("h3");
+  masterListContainer.appendChild(masterList);
+  masterList.classList.add("category-title");
+  masterList.innerText = "Full list";
+
+  // Title container
   const titleContainer = document.createElement("li");
   categoryList.appendChild(titleContainer);
   titleContainer.classList.add("category-title-container");
