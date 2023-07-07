@@ -17,6 +17,8 @@ const categoryPicker = (category) => {
   mainContent.insertBefore(newCategoryDate, newTaskContainer);
   newCategoryDate.classList.add("category-date");
   newCategoryDate.innerText = category;
+
+  
 };
 
 export { categoryPicker };
