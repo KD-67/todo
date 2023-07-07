@@ -1,5 +1,6 @@
 import { dateListPicker } from "./dateListPicker";
 import { loadMasterList } from "./masterListBtn";
+import { categoryPicker } from "./categoryPicker";
 
 const loadSideBar = () => {
   const sideBar = document.querySelector(".side-bar");
@@ -25,6 +26,7 @@ const loadSideBar = () => {
   const masterList = document.createElement("h3");
   masterListContainer.appendChild(masterList);
   masterList.classList.add("category-title");
+  masterList.classList.add("category");
   masterList.innerText = "Full list";
 
   // Master list button functionality
@@ -112,17 +114,35 @@ const loadSideBar = () => {
   home.classList.add("category");
   home.innerText = "Home";
 
+  // Home button functionality
+  home.addEventListener("click", (e) => {
+    e.preventDefault();
+    categoryPicker("Home");
+  });
+
   // Work
   const work = document.createElement("li");
   personalList.appendChild(work);
   work.classList.add("category");
   work.innerText = "Work";
 
+  // Work button functionality
+  work.addEventListener("click", (e) => {
+    e.preventDefault();
+    categoryPicker("Work");
+  });
+
   // Health
   const health = document.createElement("li");
   personalList.appendChild(health);
   health.classList.add("category");
   health.innerText = "Health";
+
+  // Health button functionality
+  health.addEventListener("click", (e) => {
+    e.preventDefault();
+    categoryPicker("Health");
+  });
 };
 
 export { loadSideBar };

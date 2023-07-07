@@ -1,4 +1,4 @@
-import { newTaskSubmit } from "./newTaskSubmitFunction";
+import { newTaskSubmit } from "./newTaskSubmit";
 import { throwNoNameError } from "./throwNoNameError";
 
 const loadNewTaskForm = () => {
