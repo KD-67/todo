@@ -1,3 +1,5 @@
+import { newTaskSubmit } from "./newTaskSubmit";
+
 const loadMainTitle = () => {
   const mainContent = document.querySelector(".main-content");
   const taskListContainer = document.querySelector(".task-list-container");

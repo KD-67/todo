@@ -1,3 +1,5 @@
+import { loadCategory } from "./loadCategory";
+
 const categoryPicker = (category) => {
   const mainContent = document.querySelector(".main-content");
   const newTaskContainer = document.querySelector(".new-task-container");
@@ -18,7 +20,8 @@ const categoryPicker = (category) => {
   newCategoryDate.classList.add("category-date");
   newCategoryDate.innerText = category;
 
-  
+  // Load tasks from respective category
+  loadCategory(category);
 };
 
 export { categoryPicker };
