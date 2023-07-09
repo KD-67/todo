@@ -1,0 +1,3 @@
+const masterListArray = [];
+
+export { masterListArray };

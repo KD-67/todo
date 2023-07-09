@@ -1,8 +1,9 @@
+import { masterListArray } from "./masterListArray";
+
 const pushMasterList = (newTask) => {
-  const masterListArray = [];
   masterListArray.push(newTask);
 
-  return masterListArray;
+  console.log(masterListArray);
 };
 
 export { pushMasterList };
