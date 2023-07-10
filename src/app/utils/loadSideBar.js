@@ -122,35 +122,33 @@ const loadSideBar = () => {
   personalList.appendChild(categoryDrop);
   categoryDrop.classList.add("category-drop");
 
+  // Dropdown list functionality
+  categoryDrop.addEventListener("change", (e) => {
+    const selectedCategory = e.target.value;
+    categoryPicker(selectedCategory);
+  });
+
   // Dropdown list options
   // Home
-  const home1 = document.createElement("option");
-  categoryDrop.appendChild(home1);
-  home1.classList.add("category");
-  home1.setAttribute("value", "Home");
-  home1.innerText = "Home";
+  const home = document.createElement("option");
+  categoryDrop.appendChild(home);
+  home.classList.add("category");
+  home.setAttribute("value", "Home");
+  home.innerText = "Home";
 
   // Work
-  const work1 = document.createElement("option");
-  categoryDrop.appendChild(work1);
-  work1.classList.add("category");
-  work1.setAttribute("value", "Work");
-  work1.innerText = "Work";
+  const work = document.createElement("option");
+  categoryDrop.appendChild(work);
+  work.classList.add("category");
+  work.setAttribute("value", "Work");
+  work.innerText = "Work";
 
   // Health
-  const health1 = document.createElement("option");
-  categoryDrop.appendChild(health1);
-  health1.classList.add("category");
-  health1.setAttribute("value", "Health");
-  health1.innerText = "Health";
-
-  ////////////////////////
-
-  // Home
-  const home = document.createElement("li");
-  personalList.appendChild(home);
-  home.classList.add("category");
-  home.innerText = "Home";
+  const health = document.createElement("option");
+  categoryDrop.appendChild(health);
+  health.classList.add("category");
+  health.setAttribute("value", "Health");
+  health.innerText = "Health";
 
   // Home button functionality
   home.addEventListener("click", (e) => {
@@ -158,23 +156,11 @@ const loadSideBar = () => {
     categoryPicker("Home");
   });
 
-  // Work
-  const work = document.createElement("li");
-  personalList.appendChild(work);
-  work.classList.add("category");
-  work.innerText = "Work";
-
   // Work button functionality
   work.addEventListener("click", (e) => {
     e.preventDefault();
     categoryPicker("Work");
   });
-
-  // Health
-  const health = document.createElement("li");
-  personalList.appendChild(health);
-  health.classList.add("category");
-  health.innerText = "Health";
 
   // Health button functionality
   health.addEventListener("click", (e) => {
