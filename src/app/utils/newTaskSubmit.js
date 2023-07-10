@@ -2,8 +2,6 @@ import { taskFactory } from "./taskFactory";
 import { pushMasterList } from "./pushMasterList";
 
 const newTaskSubmit = (name, description, due, priority, category) => {
-  const taskListContainer = document.querySelector(".task-list-container");
-
   // create new task object
   const newTask = taskFactory(name, description, due, priority, category);
 

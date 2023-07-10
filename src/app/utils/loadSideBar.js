@@ -115,8 +115,6 @@ const loadSideBar = () => {
   personalTitle.classList.add("category-title");
   personalTitle.innerText = "Categories:";
 
-  // Dropdown list label
-
   // Dropdown list
   const categoryDrop = document.createElement("select");
   personalList.appendChild(categoryDrop);
@@ -149,24 +147,6 @@ const loadSideBar = () => {
   health.classList.add("category");
   health.setAttribute("value", "Health");
   health.innerText = "Health";
-
-  // Home button functionality
-  home.addEventListener("click", (e) => {
-    e.preventDefault();
-    categoryPicker("Home");
-  });
-
-  // Work button functionality
-  work.addEventListener("click", (e) => {
-    e.preventDefault();
-    categoryPicker("Work");
-  });
-
-  // Health button functionality
-  health.addEventListener("click", (e) => {
-    e.preventDefault();
-    categoryPicker("Health");
-  });
 };
 
 export { loadSideBar };

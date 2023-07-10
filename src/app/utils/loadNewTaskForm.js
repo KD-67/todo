@@ -1,5 +1,6 @@
 import { newTaskSubmit } from "./newTaskSubmit";
 import { throwNoNameError } from "./throwNoNameError";
+import { addNewCategory } from "./addNewCategory";
 
 const loadNewTaskForm = () => {
   const newTaskContainer = document.querySelector(".new-task-container");
@@ -161,6 +162,13 @@ const loadNewTaskForm = () => {
   submit.addEventListener("click", (e) => {
     e.preventDefault();
     if (name.value) {
+      const enteredCategory = category.value;
+      const existingCategories = Array.from(categoryDatalist.children).map(
+        (option) => option.value
+      );
+      if (!existingCategories.includes(enteredCategory)) {
+        addNewCategory(enteredCategory);
+      }
       newTaskSubmit(
         name.value,
         description.value,
