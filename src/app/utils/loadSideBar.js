@@ -5,6 +5,13 @@ import { categoryPicker } from "./categoryPicker";
 const loadSideBar = () => {
   const sideBar = document.querySelector(".side-bar");
 
+  // date formatting bullshit
+  const d = new Date();
+  const myToday = d.toISOString().split("T")[0];
+  const myNextDay = new Date(d);
+  myNextDay.setDate(myNextDay.getDate() + 1);
+  const myTomorrow = myNextDay.toISOString().split("T")[0];
+
   // Category list container
   const categoryListContainer = document.createElement("div");
   sideBar.appendChild(categoryListContainer);
@@ -55,7 +62,7 @@ const loadSideBar = () => {
   // Today button functionality
   today.addEventListener("click", (e) => {
     e.preventDefault();
-    dateListPicker("today");
+    dateListPicker(myToday);
   });
 
   // Tomorrow
@@ -67,7 +74,7 @@ const loadSideBar = () => {
   // Tomorrow button functionality
   tomorrow.addEventListener("click", (e) => {
     e.preventDefault();
-    dateListPicker("tomorrow");
+    dateListPicker(myTomorrow);
   });
 
   // Choose Date Container
