@@ -11,6 +11,8 @@ const loadCategory = (category) => {
 
   for (let i = 0; i < masterListArray.length; i++) {
     if (masterListArray[i].category === category) {
+      let taskIndex = i;
+
       // Task list (ul)
       const taskList = document.createElement("ul");
       taskListContainer.appendChild(taskList);
@@ -59,6 +61,7 @@ const loadCategory = (category) => {
       completedBtn.addEventListener("click", (e) => {
         e.preventDefault();
         taskList.removeChild(task);
+        masterListArray.splice(taskIndex, 1);
       });
     }
   }

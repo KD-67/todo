@@ -38,6 +38,8 @@ const dateListPicker = (date) => {
 
   for (let i = 0; i < masterListArray.length; i++) {
     if (masterListArray[i].due === date) {
+      let taskIndex = i;
+
       // Task list (ul)
       const taskList = document.createElement("ul");
       taskListContainer.appendChild(taskList);
@@ -86,6 +88,7 @@ const dateListPicker = (date) => {
       completedBtn.addEventListener("click", (e) => {
         e.preventDefault();
         taskList.removeChild(task);
+        masterListArray.splice(taskIndex, 1);
       });
     }
   }

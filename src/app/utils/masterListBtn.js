@@ -34,6 +34,8 @@ const loadMasterList = () => {
   }
 
   for (let i = 0; i < masterListArray.length; i++) {
+    let taskIndex = i;
+
     // Task list (ul)
     const taskList = document.createElement("ul");
     taskListContainer.appendChild(taskList);
@@ -82,6 +84,7 @@ const loadMasterList = () => {
     completedBtn.addEventListener("click", (e) => {
       e.preventDefault();
       taskList.removeChild(task);
+      masterListArray.splice(taskIndex, 1);
     });
   }
 };
