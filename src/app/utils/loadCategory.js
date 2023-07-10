@@ -2,6 +2,7 @@ import { masterListArray } from "./masterListArray";
 
 const loadCategory = (category) => {
   const taskListContainer = document.querySelector(".task-list-container");
+
   // clear previous content
   if (taskListContainer.hasChildNodes) {
     while (taskListContainer.firstChild) {

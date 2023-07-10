@@ -15,10 +15,10 @@ const categoryPicker = (category) => {
   newCategoryTitle.innerText = "Category:";
 
   // Current date:
-  const newCategoryDate = document.createElement("h4");
+  const categoryDisplay = document.createElement("h4");
   mainContent.insertBefore(newCategoryDate, newTaskContainer);
-  newCategoryDate.classList.add("category-date");
-  newCategoryDate.innerText = category;
+  categoryDisplay.classList.add("category-display");
+  categoryDisplay.innerText = category;
 
   // Load tasks from respective category
   loadCategory(category);
