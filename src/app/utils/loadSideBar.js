@@ -115,6 +115,37 @@ const loadSideBar = () => {
   personalTitle.classList.add("category-title");
   personalTitle.innerText = "Categories:";
 
+  // Dropdown list label
+
+  // Dropdown list
+  const categoryDrop = document.createElement("select");
+  personalList.appendChild(categoryDrop);
+  categoryDrop.classList.add("category-drop");
+
+  // Dropdown list options
+  // Home
+  const home1 = document.createElement("option");
+  categoryDrop.appendChild(home1);
+  home1.classList.add("category");
+  home1.setAttribute("value", "Home");
+  home1.innerText = "Home";
+
+  // Work
+  const work1 = document.createElement("option");
+  categoryDrop.appendChild(work1);
+  work1.classList.add("category");
+  work1.setAttribute("value", "Work");
+  work1.innerText = "Work";
+
+  // Health
+  const health1 = document.createElement("option");
+  categoryDrop.appendChild(health1);
+  health1.classList.add("category");
+  health1.setAttribute("value", "Health");
+  health1.innerText = "Health";
+
+  ////////////////////////
+
   // Home
   const home = document.createElement("li");
   personalList.appendChild(home);
