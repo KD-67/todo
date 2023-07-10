@@ -33,6 +33,7 @@ const loadSideBar = () => {
   masterList.addEventListener("click", (e) => {
     e.preventDefault();
     loadMasterList();
+    console.log("test");
   });
 
   // Title container
