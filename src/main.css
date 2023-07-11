@@ -1,4 +1,5 @@
 :root {
+  --body-bgc: rgb(250, 245, 245);
   --header-bgc: rgb(231, 231, 193);
   --sidebar-bgc: rgb(167, 195, 248);
   --main-bgc: rgb(250, 245, 245);
@@ -12,6 +13,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  background-color: var(--body-bgc);
 }
 
 ul {
