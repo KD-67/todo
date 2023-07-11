@@ -166,7 +166,7 @@ const loadNewTaskForm = () => {
       const existingCategories = Array.from(categoryDatalist.children).map(
         (option) => option.value
       );
-      if (!existingCategories.includes(enteredCategory)) {
+      if (!existingCategories.includes(enteredCategory) && enteredCategory) {
         addNewCategory(enteredCategory);
       }
       newTaskSubmit(

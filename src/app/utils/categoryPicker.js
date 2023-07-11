@@ -16,7 +16,7 @@ const categoryPicker = (category) => {
 
   // Current date:
   const categoryDisplay = document.createElement("h4");
-  mainContent.insertBefore(newCategoryDate, newTaskContainer);
+  mainContent.insertBefore(categoryDisplay, newTaskContainer);
   categoryDisplay.classList.add("category-display");
   categoryDisplay.innerText = category;
 
