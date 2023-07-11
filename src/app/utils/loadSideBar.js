@@ -1,6 +1,7 @@
 import { dateListPicker } from "./dateListPicker";
 import { loadMasterList } from "./masterListBtn";
 import { categoryPicker } from "./categoryPicker";
+import { deleteCategory } from "./deleteCategory";
 import deleteIcon from "./media/delete.png";
 
 const loadSideBar = () => {
@@ -158,6 +159,7 @@ const loadSideBar = () => {
   // Home delete functionality
   homeDelete.addEventListener("click", (e) => {
     e.preventDefault();
+    deleteCategory("Home");
   });
 
   // Work
@@ -186,6 +188,7 @@ const loadSideBar = () => {
   // Work delete functionality
   workDelete.addEventListener("click", (e) => {
     e.preventDefault();
+    deleteCategory("Work");
   });
 
   // Health
@@ -214,7 +217,7 @@ const loadSideBar = () => {
   // Health delete functionality
   healthDelete.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("TEST");
+    deleteCategory("Health");
   });
 };
 
