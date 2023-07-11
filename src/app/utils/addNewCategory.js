@@ -1,11 +1,18 @@
-const addNewCategory = (category) => {
-  const categoryDrop = document.querySelector(".category-drop");
+import { categoryPicker } from "./categoryPicker";
 
-  const newCategory = document.createElement("option");
-  categoryDrop.appendChild(newCategory);
+const addNewCategory = (category) => {
+  const dropdownList = document.querySelector(".dropdown-list");
+
+  const newCategory = document.createElement("a");
+  dropdownList.appendChild(newCategory);
   newCategory.classList.add("category");
   newCategory.innerText = category;
   console.log("made a new category");
+
+  newCategory.addEventListener("click", (e) => {
+    e.preventDefault();
+    categoryPicker(category);
+  });
 };
 
 export { addNewCategory };
