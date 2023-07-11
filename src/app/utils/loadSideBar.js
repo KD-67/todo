@@ -115,38 +115,60 @@ const loadSideBar = () => {
   personalTitle.classList.add("category-title");
   personalTitle.innerText = "Categories:";
 
-  // Dropdown list
-  const categoryDrop = document.createElement("select");
-  personalList.appendChild(categoryDrop);
-  categoryDrop.classList.add("category-drop");
+  // Dropdown container
+  const categoryDropContainer = document.createElement("div");
+  personalList.appendChild(categoryDropContainer);
+  categoryDropContainer.classList.add("category-drop-container");
 
-  // Dropdown list functionality
-  categoryDrop.addEventListener("change", (e) => {
-    const selectedCategory = e.target.value;
-    categoryPicker(selectedCategory);
-  });
+  // Dropdown button
+  const dropdownBtn = document.createElement("button");
+  categoryDropContainer.appendChild(dropdownBtn);
+  dropdownBtn.classList.add("dropdown-btn");
+
+  // Dropdown list
+  const dropdownList = document.createElement("div");
+  categoryDropContainer.appendChild(dropdownList);
+  dropdownList.classList.add("dropdown-list");
 
   // Dropdown list options
   // Home
-  const home = document.createElement("option");
-  categoryDrop.appendChild(home);
+  const home = document.createElement("a");
+  dropdownList.appendChild(home);
   home.classList.add("category");
-  home.setAttribute("value", "Home");
+  home.setAttribute("href", "#");
   home.innerText = "Home";
 
+  // Home functionality
+  home.addEventListener("click", (e) => {
+    e.preventDefault();
+    categoryPicker("Home");
+  });
+
   // Work
-  const work = document.createElement("option");
-  categoryDrop.appendChild(work);
+  const work = document.createElement("a");
+  dropdownList.appendChild(work);
   work.classList.add("category");
-  work.setAttribute("value", "Work");
+  work.setAttribute("href", "#");
   work.innerText = "Work";
 
+  // Work functionality
+  work.addEventListener("click", (e) => {
+    e.preventDefault();
+    categoryPicker("Work");
+  });
+
   // Health
-  const health = document.createElement("option");
-  categoryDrop.appendChild(health);
+  const health = document.createElement("a");
+  dropdownList.appendChild(health);
   health.classList.add("category");
-  health.setAttribute("value", "Health");
+  health.setAttribute("href", "#");
   health.innerText = "Health";
+
+  // Health functionality
+  health.addEventListener("click", (e) => {
+    e.preventDefault();
+    categoryPicker("Health");
+  });
 };
 
 export { loadSideBar };
