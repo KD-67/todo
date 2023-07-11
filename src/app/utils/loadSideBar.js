@@ -115,7 +115,6 @@ const loadSideBar = () => {
   const personalTitle = document.createElement("h3");
   personalList.appendChild(personalTitle);
   personalTitle.classList.add("category-title");
-  personalTitle.innerText = "Categories:";
 
   // Dropdown container
   const categoryDropContainer = document.createElement("div");
@@ -126,6 +125,7 @@ const loadSideBar = () => {
   const dropdownBtn = document.createElement("button");
   categoryDropContainer.appendChild(dropdownBtn);
   dropdownBtn.classList.add("dropdown-btn");
+  dropdownBtn.innerText = "Categories:";
 
   // Dropdown list
   const dropdownList = document.createElement("div");
