@@ -1,6 +1,7 @@
 import { dateListPicker } from "./dateListPicker";
 import { loadMasterList } from "./masterListBtn";
 import { categoryPicker } from "./categoryPicker";
+import deleteIcon from "./media/delete.png";
 
 const loadSideBar = () => {
   const sideBar = document.querySelector(".side-bar");
@@ -80,7 +81,7 @@ const loadSideBar = () => {
   // Choose Date Container
   const chooseDateContainer = document.createElement("li");
   categoryList.appendChild(chooseDateContainer);
-  chooseDateContainer.classList.add("category");
+  chooseDateContainer.classList.add("choose-date-container");
   chooseDateContainer.innerText = "Choose date:";
 
   // Choose date input
@@ -132,42 +133,88 @@ const loadSideBar = () => {
 
   // Dropdown list options
   // Home
-  const home = document.createElement("a");
+  const home = document.createElement("div");
   dropdownList.appendChild(home);
-  home.classList.add("category");
-  home.setAttribute("href", "#");
-  home.innerText = "Home";
+  home.classList.add("category-div");
+
+  // Home text
+  const homeText = document.createElement("h4");
+  home.appendChild(homeText);
+  homeText.classList.add("category-text");
+  homeText.innerText = "Home";
+
+  // Home delete button
+  const homeDelete = document.createElement("img");
+  home.appendChild(homeDelete);
+  homeDelete.src = deleteIcon;
+  homeDelete.classList.add("delete-category-btn");
 
   // Home functionality
-  home.addEventListener("click", (e) => {
+  homeText.addEventListener("click", (e) => {
     e.preventDefault();
     categoryPicker("Home");
   });
 
+  // Home delete functionality
+  homeDelete.addEventListener("click", (e) => {
+    e.preventDefault();
+  });
+
   // Work
-  const work = document.createElement("a");
+  const work = document.createElement("div");
   dropdownList.appendChild(work);
-  work.classList.add("category");
-  work.setAttribute("href", "#");
-  work.innerText = "Work";
+  work.classList.add("category-div");
+
+  // Work text
+  const workText = document.createElement("h4");
+  work.appendChild(workText);
+  workText.classList.add("category-text");
+  workText.innerText = "Work";
+
+  // Work delete button
+  const workDelete = document.createElement("img");
+  work.appendChild(workDelete);
+  workDelete.src = deleteIcon;
+  workDelete.classList.add("delete-category-btn");
 
   // Work functionality
-  work.addEventListener("click", (e) => {
+  workText.addEventListener("click", (e) => {
     e.preventDefault();
     categoryPicker("Work");
   });
 
+  // Work delete functionality
+  workDelete.addEventListener("click", (e) => {
+    e.preventDefault();
+  });
+
   // Health
-  const health = document.createElement("a");
+  const health = document.createElement("div");
   dropdownList.appendChild(health);
-  health.classList.add("category");
-  health.setAttribute("href", "#");
-  health.innerText = "Health";
+  health.classList.add("category-div");
+
+  // Health text
+  const healthText = document.createElement("h4");
+  health.appendChild(healthText);
+  healthText.classList.add("category-text");
+  healthText.innerText = "Health";
+
+  // Health delete button
+  const healthDelete = document.createElement("img");
+  health.appendChild(healthDelete);
+  healthDelete.src = deleteIcon;
+  healthDelete.classList.add("delete-category-btn");
 
   // Health functionality
-  health.addEventListener("click", (e) => {
+  healthText.addEventListener("click", (e) => {
     e.preventDefault();
     categoryPicker("Health");
+  });
+
+  // Health delete functionality
+  healthDelete.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("TEST");
   });
 };
 

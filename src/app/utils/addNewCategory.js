@@ -7,7 +7,6 @@ const addNewCategory = (category) => {
   dropdownList.appendChild(newCategory);
   newCategory.classList.add("category");
   newCategory.innerText = category;
-  console.log("made a new category");
 
   newCategory.addEventListener("click", (e) => {
     e.preventDefault();

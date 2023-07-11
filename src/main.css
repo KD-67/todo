@@ -111,6 +111,22 @@ ul {
   flex: 1;
 }
 
+.category {
+  padding: 1rem;
+}
+
+.choose-date-container {
+  padding: 1rem;
+}
+
+.choose-date-btn:hover {
+  cursor: pointer;
+}
+
+.category:hover {
+  cursor: pointer;
+}
+
 .category-drop-container {
   position: relative;
   display: inline-block;
@@ -152,7 +168,17 @@ ul {
   background-color: #3e8e41;
 }
 
-.choose-date-btn:hover {
+.delete-category-btn {
+  height: 1rem;
+}
+
+.category-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.category-div:hover {
   cursor: pointer;
 }
 
