@@ -1,6 +1,7 @@
 import { dateListPicker } from "./dateListPicker";
-import { loadMasterList } from "./masterListBtn";
-import { addCategoryDisplay } from "./addCategoryDisplay";
+import { loadMasterList } from "./loadMasterList";
+import { categoryListArray } from "./categoryListArray";
+import { addCategoryToDropDownList } from "./addCategoryToDropdownList";
 
 const loadSideBar = () => {
   const sideBar = document.querySelector(".side-bar");
@@ -131,7 +132,7 @@ const loadSideBar = () => {
   dropdownList.classList.add("dropdown-list");
 
   // Add the default categories to the category array and dropdownList
-  addCategoryDisplay();
+  categoryListArray.forEach((category) => addCategoryToDropDownList(category));
 };
 
 export { loadSideBar };

@@ -3,6 +3,7 @@ import { throwNoNameError } from "./throwNoNameError";
 import { addNewCategory } from "./addNewCategory";
 import { pushCategoryList } from "./pushCategoryList";
 import { categoryListArray } from "./categoryListArray";
+import { addCategoryOption } from "./addCategoryOption";
 
 const loadNewTaskForm = () => {
   const newTaskContainer = document.querySelector(".new-task-container");
@@ -135,23 +136,12 @@ const loadNewTaskForm = () => {
 
   // Category datalist
   const categoryDatalist = document.createElement("datalist");
+  categoryDatalist.classList.add("category-datalist");
   newTaskForm.appendChild(categoryDatalist);
   categoryDatalist.setAttribute("id", "categories");
 
-  // Category options: home
-  const home = document.createElement("option");
-  categoryDatalist.appendChild(home);
-  home.setAttribute("value", "Home");
-
-  // Category options: work
-  const work = document.createElement("option");
-  categoryDatalist.appendChild(work);
-  work.setAttribute("value", "Work");
-
-  // Category options: health
-  const health = document.createElement("option");
-  categoryDatalist.appendChild(health);
-  health.setAttribute("value", "Health");
+  // Add datalist options : (categories)
+  categoryListArray.forEach((category) => addCategoryOption(category));
 
   // Sumbit button
   const submit = document.createElement("button");
