@@ -9,16 +9,13 @@ const addDefaultCategoryDisplay = () => {
   // 2. displays those categoies in the dropdown list
 
   // Create dropdownList options using categoryListArray\
-  //  const dropdownList = document.querySelector(".dropdown-list");
-  console.log(categoryListArray);
-  console.log(categoryListArray[0]);
+  const dropdownList = document.querySelector(".dropdown-list");
 
-  categoryListArray.forEach((category) => addCategoryToDropDownList(category));
+  categoryListArray.forEach(addCategoryToDropDownList);
 
   ////////////////////////////////////////////////////////////////////////////////////
 
   // Dropdown list options
-  const dropdownList = document.querySelector(".dropdown-list");
 
   // Home
   const home = document.createElement("div");
