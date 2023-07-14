@@ -1,11 +1,21 @@
 import { categoryListArray } from "./categoryListArray";
 import { categoryPicker } from "./categoryPicker";
 import { deleteCategory } from "./deleteCategory";
+import { addCategoryToDropDownList } from "./addCategoryToDropdownList";
 import deleteIcon from "./media/delete.png";
 
 const addDefaultCategoryDisplay = () => {
   // 1. pushes the default categories to categoryListArray
   // 2. displays those categoies in the dropdown list
+
+  // Create dropdownList options using categoryListArray\
+  //  const dropdownList = document.querySelector(".dropdown-list");
+  console.log(categoryListArray);
+  console.log(categoryListArray[0]);
+
+  categoryListArray.forEach((category) => addCategoryToDropDownList(category));
+
+  ////////////////////////////////////////////////////////////////////////////////////
 
   // Dropdown list options
   const dropdownList = document.querySelector(".dropdown-list");

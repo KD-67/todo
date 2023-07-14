@@ -1,6 +1,6 @@
 import { dateListPicker } from "./dateListPicker";
 import { loadMasterList } from "./masterListBtn";
-import { addDefaultCategoryDisplay } from "./addDefaultCategories";
+import { addDefaultCategoryDisplay } from "./addDefaultCategoryDisplay";
 
 const loadSideBar = () => {
   const sideBar = document.querySelector(".side-bar");

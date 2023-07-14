@@ -4,7 +4,6 @@ import { initialTaskLoad } from "./initialTaskLoad";
 
 const newTaskSubmit = (name, description, due, priority, category) => {
   const categoryDisplay = document.querySelector(".category-display");
-  const mainDate = document.querySelector(".main-date");
   const mainTitle = document.querySelector(".main-title");
   const categoryDate = document.querySelector(".category-date");
 
