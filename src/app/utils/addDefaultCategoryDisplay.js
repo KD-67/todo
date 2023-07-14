@@ -1,20 +1,15 @@
 import { categoryListArray } from "./categoryListArray";
-import { categoryPicker } from "./categoryPicker";
-import { deleteCategory } from "./deleteCategory";
 import { addCategoryToDropDownList } from "./addCategoryToDropdownList";
-import deleteIcon from "./media/delete.png";
 
 const addDefaultCategoryDisplay = () => {
   // 1. pushes the default categories to categoryListArray
   // 2. displays those categoies in the dropdown list
 
-  // Create dropdownList options using categoryListArray\
-  const dropdownList = document.querySelector(".dropdown-list");
-
-  categoryListArray.forEach(addCategoryToDropDownList);
+  // Create dropdownList options using categoryListArray
+  categoryListArray.forEach((category) => addCategoryToDropDownList(category));
 
   ////////////////////////////////////////////////////////////////////////////////////
-
+  /*
   // Dropdown list options
 
   // Home
@@ -103,6 +98,8 @@ const addDefaultCategoryDisplay = () => {
     e.preventDefault();
     deleteCategory("Health");
   });
+
+  */
 };
 
 export { addDefaultCategoryDisplay };
