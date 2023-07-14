@@ -1,13 +1,21 @@
+import { addCategoryDisplay } from "./addCategoryDisplay";
 import { categoryListArray } from "./categoryListArray";
 
 const deleteCategory = (category) => {
-  console.log("old array: " + categoryListArray);
   // Remove category
+  console.log("old array: " + categoryListArray);
   let listIndex = categoryListArray.indexOf(category);
   categoryListArray.splice(listIndex, 1);
+  console.log("new array: " + categoryListArray);
 
   // Delete category div+content from DOM
-  console.log("new array: " + categoryListArray);
+  const dropdownList = document.querySelector(".dropdown-list");
+
+  while (dropdownList.firstChild) {
+    dropdownList.removeChild(dropdownList.firstChild);
+  }
+
+  addCategoryDisplay();
 };
 
 export { deleteCategory };

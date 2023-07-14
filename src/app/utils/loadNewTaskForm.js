@@ -1,6 +1,8 @@
 import { newTaskSubmit } from "./newTaskSubmit";
 import { throwNoNameError } from "./throwNoNameError";
 import { addNewCategory } from "./addNewCategory";
+import { pushCategoryList } from "./pushCategoryList";
+import { categoryListArray } from "./categoryListArray";
 
 const loadNewTaskForm = () => {
   const newTaskContainer = document.querySelector(".new-task-container");
@@ -168,6 +170,8 @@ const loadNewTaskForm = () => {
       );
       if (!existingCategories.includes(enteredCategory) && enteredCategory) {
         addNewCategory(enteredCategory);
+        pushCategoryList(enteredCategory);
+        console.log(categoryListArray);
       }
       newTaskSubmit(
         name.value,

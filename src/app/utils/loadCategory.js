@@ -10,6 +10,7 @@ const loadCategory = (category) => {
     }
   }
 
+  // Updates DOM
   for (let i = 0; i < masterListArray.length; i++) {
     if (masterListArray[i].category === category) {
       let taskIndex = i;
