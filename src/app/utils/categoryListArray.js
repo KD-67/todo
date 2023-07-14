@@ -1,0 +1,3 @@
+const categoryListArray = [];
+
+export { categoryListArray };
