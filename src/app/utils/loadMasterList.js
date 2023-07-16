@@ -2,11 +2,7 @@ import { masterListArray } from "./masterListArray";
 import { activeDisplay } from "./activeDisplayArray";
 
 const loadMasterList = () => {
-  console.log("before: ");
-  console.log(activeDisplay);
   activeDisplay.splice(0, activeDisplay.length, ...masterListArray);
-  console.log("after: ");
-  console.log(activeDisplay);
 
   // Title :
 

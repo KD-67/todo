@@ -44,12 +44,8 @@ const dateListPicker = (date) => {
   masterListArray.forEach((task) => {
     if (task.due === date) {
       pushActiveDisplay(task);
-      console.log(date);
-      console.log(task.due);
     }
   });
-
-  console.log(activeDisplay);
 
   for (let i = 0; i < masterListArray.length; i++) {
     if (masterListArray[i].due === date) {
