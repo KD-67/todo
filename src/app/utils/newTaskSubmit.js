@@ -1,6 +1,9 @@
 import { taskFactory } from "./taskFactory";
 import { pushMasterList } from "./pushMasterList";
 import { initialTaskLoad } from "./initialTaskLoad";
+import { saveToLocalStorage } from "./saveToLocalStorage";
+import { categoryListArray } from "./categoryListArray";
+import { masterListArray } from "./masterListArray";
 
 const newTaskSubmit = (name, description, due, priority, category) => {
   const categoryDisplay = document.querySelector(".category-display");
@@ -21,6 +24,12 @@ const newTaskSubmit = (name, description, due, priority, category) => {
   } else if (mainTitle && mainTitle.innerText == "Master List") {
     initialTaskLoad(name, description, priority, category);
   }
+
+  // Save updated data to local storage
+  saveToLocalStorage({
+    categoryList: categoryListArray,
+    taskList: masterListArray,
+  });
 };
 
 export { newTaskSubmit };

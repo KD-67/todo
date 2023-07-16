@@ -1,5 +1,7 @@
 import { masterListArray } from "./masterListArray";
 import { activeDisplay } from "./activeDisplayArray";
+import { saveToLocalStorage } from "./saveToLocalStorage";
+import { categoryListArray } from "./categoryListArray";
 
 const loadMasterList = () => {
   activeDisplay.splice(0, activeDisplay.length, ...masterListArray);
@@ -88,6 +90,12 @@ const loadMasterList = () => {
       e.preventDefault();
       taskList.removeChild(task);
       masterListArray.splice(taskIndex, 1);
+
+      // Save updated data to local storage
+      saveToLocalStorage({
+        categoryList: categoryListArray,
+        taskList: masterListArray,
+      });
     });
   }
 };

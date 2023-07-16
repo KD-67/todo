@@ -53,6 +53,12 @@ const initialTaskLoad = (name, description, priority, category) => {
     taskList.removeChild(task);
     let taskIndex = masterListArray.indexOf(task);
     masterListArray.splice(taskIndex, 1);
+
+    // Save updated data to local storage
+    saveToLocalStorage({
+      categoryList: categoryListArray,
+      taskList: masterListArray,
+    });
   });
 };
 

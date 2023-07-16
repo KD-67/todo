@@ -75,6 +75,12 @@ const loadCategory = (category) => {
         e.preventDefault();
         taskList.removeChild(task);
         masterListArray.splice(taskIndex, 1);
+
+        // Save updated data to local storage
+        saveToLocalStorage({
+          categoryList: categoryListArray,
+          taskList: masterListArray,
+        });
       });
     }
   }
