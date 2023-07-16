@@ -1,4 +1,3 @@
-import { activeDisplay } from "./activeDisplayArray";
 import { categoryListArray } from "./categoryListArray";
 import { masterListArray } from "./masterListArray";
 
