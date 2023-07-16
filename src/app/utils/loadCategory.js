@@ -1,4 +1,7 @@
 import { masterListArray } from "./masterListArray";
+import { activeDisplay } from "./activeDisplayArray";
+import { emptyActiveDisplay } from "./emptyActiveDisplay";
+import { pushActiveDisplay } from "./pushActiveDisplay";
 
 const loadCategory = (category) => {
   const taskListContainer = document.querySelector(".task-list-container");
@@ -9,6 +12,14 @@ const loadCategory = (category) => {
       taskListContainer.removeChild(taskListContainer.firstChild);
     }
   }
+
+  // Update activeDisplay array
+  emptyActiveDisplay();
+  masterListArray.forEach((task) => {
+    if (task.category === category) {
+      pushActiveDisplay(task);
+    }
+  });
 
   // Updates DOM
   for (let i = 0; i < masterListArray.length; i++) {

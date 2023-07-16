@@ -1,0 +1,3 @@
+const activeDisplay = [];
+
+export { activeDisplay };

@@ -1,4 +1,7 @@
+import { activeDisplay } from "./activeDisplayArray";
 import { masterListArray } from "./masterListArray";
+import { emptyActiveDisplay } from "./emptyActiveDisplay";
+import { pushActiveDisplay } from "./pushActiveDisplay";
 
 const dateListPicker = (date) => {
   const mainContent = document.querySelector(".main-content");
@@ -35,6 +38,18 @@ const dateListPicker = (date) => {
       taskListContainer.removeChild(taskListContainer.firstChild);
     }
   }
+
+  // Update activeDisplay array
+  emptyActiveDisplay();
+  masterListArray.forEach((task) => {
+    if (task.due === date) {
+      pushActiveDisplay(task);
+      console.log(date);
+      console.log(task.due);
+    }
+  });
+
+  console.log(activeDisplay);
 
   for (let i = 0; i < masterListArray.length; i++) {
     if (masterListArray[i].due === date) {
